@@ -8,6 +8,11 @@ const columns = [
   { label: 'DESCRIPTION', render: (item) => item.description ?? '-' },
 ]
 
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
+const endpoint = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev/api/workouts/`
+  : 'http://localhost:8000/api/workouts/'
+
 export default function Workouts() {
-  return <CollectionPage title="Workouts" eyebrow="NEXT UP" resource="workouts" endpoint="/api/workouts/" columns={columns} emptyMessage="No workouts are available yet." />
+  return <CollectionPage title="Workouts" eyebrow="NEXT UP" resource="workouts" endpoint={endpoint} columns={columns} emptyMessage="No workouts are available yet." />
 }

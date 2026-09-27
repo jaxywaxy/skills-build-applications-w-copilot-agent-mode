@@ -14,6 +14,11 @@ const columns = [
   { label: 'PERIOD', render: (item) => item.period ?? '-' },
 ]
 
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
+const endpoint = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev/api/leaderboard/`
+  : 'http://localhost:8000/api/leaderboard/'
+
 export default function Leaderboard() {
-  return <CollectionPage title="Leaderboard" eyebrow="IN THE MIX" resource="leaderboard" endpoint="/api/leaderboard/" columns={columns} emptyMessage="Leaderboard entries will appear here." />
+  return <CollectionPage title="Leaderboard" eyebrow="IN THE MIX" resource="leaderboard" endpoint={endpoint} columns={columns} emptyMessage="Leaderboard entries will appear here." />
 }

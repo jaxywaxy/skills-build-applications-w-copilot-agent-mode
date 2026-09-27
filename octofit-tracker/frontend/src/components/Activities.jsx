@@ -13,6 +13,11 @@ const columns = [
   { label: 'DISTANCE', render: (item) => item.distanceKilometers == null ? '-' : `${item.distanceKilometers} km` },
 ]
 
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
+const endpoint = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev/api/activities/`
+  : 'http://localhost:8000/api/activities/'
+
 export default function Activities() {
-  return <CollectionPage title="Activities" eyebrow="MOVEMENT" resource="activities" endpoint="/api/activities/" columns={columns} emptyMessage="No activities have been logged yet." />
+  return <CollectionPage title="Activities" eyebrow="MOVEMENT" resource="activities" endpoint={endpoint} columns={columns} emptyMessage="No activities have been logged yet." />
 }

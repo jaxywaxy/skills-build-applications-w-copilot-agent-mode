@@ -6,6 +6,11 @@ const columns = [
   { label: 'POINTS', render: (item) => item.points ?? 0 },
 ]
 
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
+const endpoint = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev/api/teams/`
+  : 'http://localhost:8000/api/teams/'
+
 export default function Teams() {
-  return <CollectionPage title="Teams" eyebrow="TOGETHER" resource="teams" endpoint="/api/teams/" columns={columns} emptyMessage="No teams are available yet." />
+  return <CollectionPage title="Teams" eyebrow="TOGETHER" resource="teams" endpoint={endpoint} columns={columns} emptyMessage="No teams are available yet." />
 }
