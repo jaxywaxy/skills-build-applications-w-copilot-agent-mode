@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import { connectToDatabase } from './config/database.js';
-import { registerCollectionRoutes } from './routes.js';
+import { registerCollectionRoutes } from './routes/index.js';
 
 const app = express();
 const port = Number(process.env.PORT ?? 8000);
