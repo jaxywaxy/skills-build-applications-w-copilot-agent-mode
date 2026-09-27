@@ -7,5 +7,5 @@ const columns = [
 ]
 
 export default function Teams() {
-  return <CollectionPage title="Teams" eyebrow="TOGETHER" resource="teams" columns={columns} emptyMessage="No teams are available yet." />
+  return <CollectionPage title="Teams" eyebrow="TOGETHER" resource="teams" endpoint="/api/teams/" columns={columns} emptyMessage="No teams are available yet." />
 }

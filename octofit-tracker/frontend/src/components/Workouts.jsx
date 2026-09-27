@@ -9,5 +9,5 @@ const columns = [
 ]
 
 export default function Workouts() {
-  return <CollectionPage title="Workouts" eyebrow="NEXT UP" resource="workouts" columns={columns} emptyMessage="No workouts are available yet." />
+  return <CollectionPage title="Workouts" eyebrow="NEXT UP" resource="workouts" endpoint="/api/workouts/" columns={columns} emptyMessage="No workouts are available yet." />
 }

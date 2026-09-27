@@ -5,7 +5,9 @@ export const apiBaseUrl = codespaceName
   : 'http://localhost:8000'
 
 export function apiEndpoint(path) {
-  return `${apiBaseUrl}/api/${path.replace(/^\/+/, '')}`
+  const normalizedPath = path.replace(/^\/+/, '')
+  const apiPath = normalizedPath.startsWith('api/') ? normalizedPath : `api/${normalizedPath}`
+  return `${apiBaseUrl}/${apiPath}`
 }
 
 export function getCollectionItems(payload) {

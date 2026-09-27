@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { apiEndpoint, getCollectionItems } from './api.js'
 
-export default function CollectionPage({ title, eyebrow, resource, columns, emptyMessage }) {
+export default function CollectionPage({ title, eyebrow, resource, endpoint, columns, emptyMessage }) {
   const [items, setItems] = useState([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(true)
@@ -15,7 +15,7 @@ export default function CollectionPage({ title, eyebrow, resource, columns, empt
       setError('')
 
       try {
-        const response = await fetch(apiEndpoint(`${resource}/`), { signal: controller.signal })
+        const response = await fetch(apiEndpoint(endpoint), { signal: controller.signal })
         if (!response.ok) throw new Error(`Request failed (${response.status})`)
         setItems(getCollectionItems(await response.json()))
       } catch (loadError) {

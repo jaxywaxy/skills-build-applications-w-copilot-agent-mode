@@ -6,5 +6,5 @@ const columns = [
 ]
 
 export default function Users() {
-  return <CollectionPage title="Users" eyebrow="COMMUNITY" resource="users" columns={columns} emptyMessage="No users are available yet." />
+  return <CollectionPage title="Users" eyebrow="COMMUNITY" resource="users" endpoint="/api/users/" columns={columns} emptyMessage="No users are available yet." />
 }

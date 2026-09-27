@@ -15,5 +15,5 @@ const columns = [
 ]
 
 export default function Leaderboard() {
-  return <CollectionPage title="Leaderboard" eyebrow="IN THE MIX" resource="leaderboard" columns={columns} emptyMessage="Leaderboard entries will appear here." />
+  return <CollectionPage title="Leaderboard" eyebrow="IN THE MIX" resource="leaderboard" endpoint="/api/leaderboard/" columns={columns} emptyMessage="Leaderboard entries will appear here." />
 }

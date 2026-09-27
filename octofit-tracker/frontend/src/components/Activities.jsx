@@ -14,5 +14,5 @@ const columns = [
 ]
 
 export default function Activities() {
-  return <CollectionPage title="Activities" eyebrow="MOVEMENT" resource="activities" columns={columns} emptyMessage="No activities have been logged yet." />
+  return <CollectionPage title="Activities" eyebrow="MOVEMENT" resource="activities" endpoint="/api/activities/" columns={columns} emptyMessage="No activities have been logged yet." />
 }
