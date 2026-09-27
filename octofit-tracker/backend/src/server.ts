@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import mongoose from 'mongoose';
 import { connectToDatabase } from './config/database.js';
 import { registerCollectionRoutes } from './routes/index.js';
@@ -9,7 +10,13 @@ const codespaceName = process.env.CODESPACE_NAME;
 const apiBaseUrl = codespaceName
   ? `https://${codespaceName}-8000.app.github.dev`
   : 'http://localhost:8000';
+const frontendOrigins = ['http://localhost:5173', 'http://127.0.0.1:5173'];
 
+if (codespaceName) {
+  frontendOrigins.push(`https://${codespaceName}-5173.app.github.dev`);
+}
+
+app.use(cors({ origin: frontendOrigins }));
 app.use(express.json());
 
 app.get(['/api', '/api/'], (_request, response) => {

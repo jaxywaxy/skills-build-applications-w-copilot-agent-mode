@@ -46,6 +46,17 @@ h2 { margin: 0; color: var(--ink); font-size: 20px; font-weight: 660; letter-spa
 h3 { margin: 0; color: #31443b; font-size: 14px; font-weight: 650; }
 .empty-state p { margin: 5px 0 0; color: #7c8781; font-size: 12px; }
 .section-empty { min-height: 270px; align-items: flex-start; }
+.collection-header { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+.collection-count { color: #78857e; font-size: 12px; }
+.collection-table-wrap { margin-top: 28px; overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+.collection-table { min-width: 620px; margin: 0; }
+.collection-table th { padding: 14px 18px; color: #75827b; background: #f7f9f7; font-size: 10px; font-weight: 750; letter-spacing: 1px; white-space: nowrap; }
+.collection-table td { padding: 15px 18px; color: #34443c; font-size: 13px; vertical-align: middle; }
+.collection-table tbody tr:last-child td { border-bottom: 0; }
+.collection-message { margin-top: 24px; padding: 22px; border: 1px dashed #d5ddd7; border-radius: 6px; color: #69766f; background: rgba(255,255,255,.55); font-size: 13px; }
+.collection-message--error { color: #8c3b2c; border-color: #e8c4b9; background: #fff7f3; }
+.collection-refresh { min-height: 38px; border-radius: 5px; font-size: 12px; font-weight: 650; }
+.collection-refresh:disabled { opacity: .65; }
 @keyframes enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 760px) {
   .sidebar { width: 74px; padding: 22px 9px 14px; align-items: center; }
@@ -62,6 +73,8 @@ h3 { margin: 0; color: #31443b; font-size: 14px; font-weight: 650; }
   .topbar-context { font-size: 8px; }
   .page-content { padding: 38px 20px 56px; }
   .welcome-row { align-items: flex-start; flex-direction: column; }
+  .collection-header { align-items: flex-start; flex-direction: column; }
+  .collection-refresh { align-self: flex-start; }
   .stats-grid { grid-template-columns: 1fr; margin-top: 28px; gap: 9px; }
   .stat-panel { min-height: 112px; padding: 16px 18px; }
   .stat-panel strong { margin-top: 10px; }
